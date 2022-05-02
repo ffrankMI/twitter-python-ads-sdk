@@ -2,10 +2,10 @@
 
 """Container for all targeting related logic used by the Ads API SDK."""
 
-from twitter_ads.http import Request
-from twitter_ads.resource import resource_property, Resource, Persistence
+from ahttp import Request
+from resource import resource_property, Resource, Persistence
 from twitter_ads import API_VERSION
-from twitter_ads.utils import FlattenParams
+from utils import FlattenParams
 import json
 
 

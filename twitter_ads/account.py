@@ -3,16 +3,16 @@
 """
 A Twitter supported and maintained Ads API SDK for Python.
 """
-from twitter_ads.enum import TRANSFORM
-from twitter_ads.http import Request
-from twitter_ads.cursor import Cursor
-from twitter_ads import API_VERSION
+from enums import TRANSFORM
+from ahttp import Request
+from cursor import Cursor
+from version_info import API_VERSION
 
-from twitter_ads.resource import resource_property, Resource
-from twitter_ads.creative import (AccountMedia, MediaCreative, ScheduledTweet,
+from resource import resource_property, Resource
+from creative import (AccountMedia, MediaCreative, ScheduledTweet,
                                   Card, VideoWebsiteCard, PromotedTweet)
-from twitter_ads.audience import CustomAudience
-from twitter_ads.campaign import (AppList, Campaign, FundingInstrument, LineItem,
+from audience import CustomAudience
+from campaign import (AppList, Campaign, FundingInstrument, LineItem,
                                   PromotableUser, TrackingTags, ScheduledPromotedTweet)
 
 

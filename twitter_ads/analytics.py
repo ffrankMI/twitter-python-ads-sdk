@@ -8,13 +8,13 @@ try:
 except ImportError:
     from urlparse import urlparse
 
-from twitter_ads.utils import to_time, validate_whole_hours
-from twitter_ads.enum import ENTITY, GRANULARITY, PLACEMENT, TRANSFORM
-from twitter_ads.http import Request
-from twitter_ads.cursor import Cursor
-from twitter_ads.resource import Resource, resource_property
-from twitter_ads import API_VERSION
-from twitter_ads.utils import FlattenParams
+from utils import to_time, validate_whole_hours
+from enums import ENTITY, GRANULARITY, PLACEMENT, TRANSFORM
+from ahttp import Request
+from cursor import Cursor
+from resource import Resource, resource_property
+from version_info import API_VERSION
+from utils import FlattenParams
 
 
 class Analytics(Resource):
@@ -30,7 +30,8 @@ class Analytics(Resource):
         'MediaCreative': ENTITY.MEDIA_CREATIVE,
         'OrganicTweet': ENTITY.ORGANIC_TWEET,
         'PromotedTweet': ENTITY.PROMOTED_TWEET,
-        'PromotedAccount': ENTITY.PROMOTED_ACCOUNT
+        'PromotedAccount': ENTITY.PROMOTED_ACCOUNT,
+        'Tweet': ENTITY.TWEET
     }
 
     RESOURCE_SYNC = '/' + API_VERSION + '/stats/accounts/{account_id}'

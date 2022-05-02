@@ -6,11 +6,11 @@ import dateutil.parser
 import json
 
 from datetime import datetime
-from twitter_ads.utils import format_time
-from twitter_ads.enum import ENTITY, TRANSFORM
-from twitter_ads.http import Request
-from twitter_ads.cursor import Cursor
-from twitter_ads.utils import extract_response_headers, FlattenParams
+from utils import format_time
+from enums import ENTITY, TRANSFORM
+from ahttp import Request
+from cursor import Cursor
+from utils import extract_response_headers, FlattenParams
 
 
 def resource_property(klass, name, **kwargs):
@@ -52,6 +52,12 @@ class Resource(object):
         for name in self.PROPERTIES:
             attr = '_{0}'.format(name)
             transform = self.PROPERTIES[name].get('transform', None)
+            
+            #added start
+            if type(response) == type([]):
+                response = response[0]
+            #added stop
+
             value = response.get(name, None)
             if transform and transform == TRANSFORM.TIME and value:
                 setattr(self, attr, dateutil.parser.parse(value))
@@ -95,9 +101,9 @@ class Resource(object):
     @classmethod
     def load(klass, account, id, **kwargs):
         """Returns an object instance for a given resource."""
+        
         resource = klass.RESOURCE.format(account_id=account.id, id=id)
         response = Request(account.client, 'get', resource, params=kwargs).perform()
-
         return klass(account).from_response(response.body['data'])
 
     def reload(self, **kwargs):

@@ -17,8 +17,8 @@ else:
 
 from requests.exceptions import Timeout
 from requests_oauthlib import OAuth1Session
-from twitter_ads.utils import get_version
-from twitter_ads.error import Error
+from utils import get_version
+from error import Error
 
 
 class Request(object):

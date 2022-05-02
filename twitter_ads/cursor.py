@@ -3,8 +3,8 @@
 """Container for all Cursor logic used by the Ads API SDK."""
 
 # from twitter_ads import *
-from twitter_ads.http import Request
-from twitter_ads.utils import extract_response_headers
+from ahttp import Request
+from utils import extract_response_headers
 
 
 class Cursor(object):

@@ -4,7 +4,7 @@
 A Twitter supported and maintained Ads API SDK for Python.
 """
 
-from twitter_ads.account import Account
+from account import Account
 
 
 class Client(object):

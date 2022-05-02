@@ -4,13 +4,13 @@
 
 import json
 from requests.exceptions import HTTPError
-from twitter_ads import API_VERSION
-from twitter_ads.cursor import Cursor
-from twitter_ads.enum import TRANSFORM
-from twitter_ads.http import Request
-from twitter_ads.analytics import Analytics
-from twitter_ads.resource import resource_property, Resource, Persistence
-from twitter_ads.utils import Deprecated, FlattenParams
+from version_info import API_VERSION
+from cursor import Cursor
+from enums import TRANSFORM
+from ahttp import Request
+from analytics import Analytics
+from resource import resource_property, Resource, Persistence
+from utils import Deprecated, FlattenParams
 
 
 class PromotedAccount(Analytics, Resource, Persistence):
@@ -82,6 +82,24 @@ resource_property(PromotedTweet, 'id', readonly=True)
 resource_property(PromotedTweet, 'updated_at', readonly=True, transform=TRANSFORM.TIME)
 resource_property(PromotedTweet, 'tweet_id')
 resource_property(PromotedTweet, 'line_item_id')
+
+"""
+Addition Start
+"""
+class Tweet(Analytics, Resource, Persistence):
+
+    PROPERTIES = {}
+
+    RESOURCE_COLLECTION = '/' + API_VERSION + '/accounts/{account_id}/tweets'
+    RESOURCE = '/' + API_VERSION + '/accounts/{account_id}/tweets?tweet_type=PUBLISHED&tweet_ids={id}'
+
+
+# tweet properties
+# read-only
+resource_property(Tweet, 'name', readonly=True)
+"""
+Addition Stop
+"""
 
 
 class AccountMedia(Resource, Persistence):
