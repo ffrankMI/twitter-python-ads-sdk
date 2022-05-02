@@ -1,5 +1,5 @@
-from ahttp import Request
-from resource import resource_property, Resource
+from twitter_ads.ahttp import Request
+from twitter_ads.resource import resource_property, Resource
 
 
 class UserIdLookup(Resource):

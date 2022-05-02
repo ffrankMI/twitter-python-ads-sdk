@@ -2,12 +2,12 @@
 
 """Container for all audience management logic used by the Ads API SDK."""
 
-from enums import TRANSFORM
-from resource import resource_property, Resource
-from ahttp import Request
-from error import BadRequest
-from cursor import Cursor
-from version_info import API_VERSION
+from twitter_ads.enums import TRANSFORM
+from twitter_ads.resource import resource_property, Resource
+from twitter_ads.ahttp import Request
+from twitter_ads.error import BadRequest
+from twitter_ads.cursor import Cursor
+from twitter_ads import API_VERSION
 
 import json
 

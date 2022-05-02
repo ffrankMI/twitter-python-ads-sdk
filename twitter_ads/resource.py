@@ -6,11 +6,11 @@ import dateutil.parser
 import json
 
 from datetime import datetime
-from utils import format_time
-from enums import ENTITY, TRANSFORM
-from ahttp import Request
-from cursor import Cursor
-from utils import extract_response_headers, FlattenParams
+from twitter_ads.utils import format_time
+from twitter_ads.enums import ENTITY, TRANSFORM
+from twitter_ads.ahttp import Request
+from twitter_ads.cursor import Cursor
+from twitter_ads.utils import extract_response_headers, FlattenParams
 
 
 def resource_property(klass, name, **kwargs):

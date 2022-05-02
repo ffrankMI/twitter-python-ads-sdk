@@ -10,8 +10,8 @@ warnings.simplefilter('default', DeprecationWarning)
 from email.utils import formatdate
 from time import mktime
 
-from version_info import VERSION
-from enums import GRANULARITY
+from twitter_ads import VERSION
+from twitter_ads.enums import GRANULARITY
 
 
 def get_version():

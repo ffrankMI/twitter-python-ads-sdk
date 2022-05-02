@@ -8,13 +8,13 @@ try:
 except ImportError:
     from urlparse import urlparse
 
-from utils import to_time, validate_whole_hours
-from enums import ENTITY, GRANULARITY, PLACEMENT, TRANSFORM
-from ahttp import Request
-from cursor import Cursor
-from resource import Resource, resource_property
-from version_info import API_VERSION
-from utils import FlattenParams
+from twitter_ads.utils import to_time, validate_whole_hours
+from twitter_ads.enums import ENTITY, GRANULARITY, PLACEMENT, TRANSFORM
+from twitter_ads.ahttp import Request
+from twitter_ads.cursor import Cursor
+from twitter_ads.resource import Resource, resource_property
+from twitter_ads import API_VERSION
+from twitter_ads.utils import FlattenParams
 
 
 class Analytics(Resource):

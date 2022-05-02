@@ -4,13 +4,13 @@
 
 import json
 from requests.exceptions import HTTPError
-from version_info import API_VERSION
-from cursor import Cursor
-from enums import TRANSFORM
-from ahttp import Request
-from analytics import Analytics
-from resource import resource_property, Resource, Persistence
-from utils import Deprecated, FlattenParams
+from twitter_ads.version_info import API_VERSION
+from twitter_ads.cursor import Cursor
+from twitter_ads.enums import TRANSFORM
+from twitter_ads.ahttp import Request
+from twitter_ads.analytics import Analytics
+from twitter_ads.resource import resource_property, Resource, Persistence
+from twitter_ads.utils import Deprecated, FlattenParams
 
 
 class PromotedAccount(Analytics, Resource, Persistence):
